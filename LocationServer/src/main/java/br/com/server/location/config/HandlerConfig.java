@@ -19,7 +19,7 @@ public class HandlerConfig {
 
     @ExceptionHandler(NoRecordFoundException.class)
     public ResponseEntity<?> handlerNoRecordFoundException(NoRecordFoundException noRecordFoundException) {
-        return new ResponseEntity<>(new ValidationFieldException(noRecordFoundException.getMessage(),
+        return new ResponseEntity<>(new NoRecordFoundException(noRecordFoundException.getMessage(),
                 noRecordFoundException.getClass().getName()
         ), HttpStatus.NO_CONTENT);
     }
