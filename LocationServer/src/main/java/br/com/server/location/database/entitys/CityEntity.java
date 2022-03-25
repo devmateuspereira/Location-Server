@@ -30,10 +30,10 @@ public class CityEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_CITY")
-    @Column(name = "ID_CITY", nullable = false)
+    @Column(name = "ID_CITY", updatable = false, nullable = false)
     private Long id;
 
-    @Column(name = "DSC_NAME", unique = true, nullable = false)
+    @Column(name = "DSC_NAME", unique = true, updatable = false, nullable = false)
     private String name;
 
     @ManyToOne

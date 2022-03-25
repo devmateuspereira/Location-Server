@@ -10,8 +10,6 @@ import java.util.List;
 @Builder
 public class CountryResponse implements Serializable {
 
-    private String error;
-
     private String name;
 
     private List<StateResponse> states;

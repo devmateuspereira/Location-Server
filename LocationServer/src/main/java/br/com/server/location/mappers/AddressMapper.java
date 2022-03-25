@@ -1,4 +1,4 @@
-package br.com.server.location.adapters;
+package br.com.server.location.mappers;
 
 import br.com.server.location.controllers.dtos.AddressDTO;
 import br.com.server.location.controllers.responses.AddressResponse;

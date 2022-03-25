@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface ICityService {
 
-    public List<City> searchAllCities() throws CityException;
-
-    public void deleteCity(Long cityId) throws CityException;
-
-    public City updateCity(City city) throws CityException;
-
-    public City searchCityById(Long cityId) throws CityException;
-
-    public City registerCity(City city) throws CityException;
+//    public List<City> searchAllCities() throws CityException;
+//
+//    public void deleteCity(Long cityId) throws CityException;
+//
+//    public City updateCity(City city) throws CityException;
+//
+//    public City searchCityById(Long cityId) throws CityException;
+//
+//    public City registerCity(City city) throws CityException;
 
 }

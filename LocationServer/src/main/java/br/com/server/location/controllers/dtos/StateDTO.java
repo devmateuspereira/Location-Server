@@ -13,6 +13,6 @@ public class StateDTO implements Serializable {
 
     private String initials;
 
-    private Long country;
+    private String countryName;
 
 }

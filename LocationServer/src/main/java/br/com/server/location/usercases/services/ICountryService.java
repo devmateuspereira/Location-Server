@@ -10,11 +10,7 @@ public interface ICountryService {
 
     public List<Country> searchAllCountries() throws NoRecordFoundException;
 
-    public void deleteCountry(Long countryId) throws ValidationFieldException, NoRecordFoundException;
-
-    public Country searchCountryById(Long countryId) throws ValidationFieldException, NoRecordFoundException;
-
-    public Country updateCountry(Long countryId, Country country) throws ValidationFieldException, NoRecordFoundException;
+    public void deleteCountry(Country country) throws ValidationFieldException, NoRecordFoundException;
 
     public Country registerCountry(Country country) throws ValidationFieldException;
 

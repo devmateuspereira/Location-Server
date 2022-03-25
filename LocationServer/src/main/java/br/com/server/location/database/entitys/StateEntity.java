@@ -30,10 +30,10 @@ public class StateEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_STATE")
-    @Column(name = "ID_STATE", nullable = false)
+    @Column(name = "ID_STATE", updatable = false, nullable = false)
     private Long id;
 
-    @Column(name = "DSC_NAME", unique = true, nullable = false)
+    @Column(name = "DSC_NAME", unique = true, updatable = false, nullable = false)
     private String name;
 
     @Column(name = "DSC_INITIALS", nullable = false, length = 2)

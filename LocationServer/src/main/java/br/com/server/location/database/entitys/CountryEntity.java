@@ -30,10 +30,10 @@ public class CountryEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_COUNTRY")
-    @Column(name = "ID_COUNTRY", nullable = false)
+    @Column(name = "ID_COUNTRY", updatable = false, nullable = false)
     private Long id;
 
-    @Column(name = "DSC_NAME", unique = true, nullable = false, length = 30)
+    @Column(name = "DSC_NAME", unique = true, updatable = false, nullable = false, length = 30)
     private String name;
 
     @OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH })
