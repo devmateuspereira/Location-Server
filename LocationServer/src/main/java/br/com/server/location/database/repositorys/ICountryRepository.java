@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface ICountryRepository extends JpaRepository<CountryEntity, Long> {
 
-    @Query("SELECT country FROM Country country WHERE UPPER(country.name) LIKE %:name%")
+    @Query("SELECT country FROM CountryEntity country WHERE UPPER(country.name) LIKE %:name% ")
     public Optional<CountryEntity> findByName(@Param("name") String name);
 
 }

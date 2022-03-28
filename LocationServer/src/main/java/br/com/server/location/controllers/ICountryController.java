@@ -30,7 +30,6 @@ public interface ICountryController {
 
     @ApiOperation(value = "Deleta um país")
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Retorna um response de país"),
             @ApiResponse(code = 204, message = "Retorna uma mensagem amigável para o usuário"),
             @ApiResponse(code = 406, message = "Retorna uma mensagem amigável para o usuário"),
     })

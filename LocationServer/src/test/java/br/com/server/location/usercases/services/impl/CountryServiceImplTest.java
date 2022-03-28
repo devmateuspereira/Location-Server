@@ -75,18 +75,18 @@ public class CountryServiceImplTest {
         when(countryRepository.findByName(any())).thenReturn(
                 Optional.ofNullable(CountryEntity.builder().name("Brasil").build())
         );
-        countryService.deleteCountry(Country.builder().name("Brasil").build());
+        countryService.deleteCountry("Brasil");
     }
 
     @Test(expected = ValidationFieldException.class)
     public void shouldThrowErrorOfDeleteCountryIfNameFieldAreMissing() throws ValidationFieldException, NoRecordFoundException {
-        countryService.deleteCountry(Country.builder().name(null).build());
+        countryService.deleteCountry(null);
     }
 
     @Test(expected = NoRecordFoundException.class)
     public void shouldThrowErrorOfDeleteCountryIfCountryNameNotFound() throws ValidationFieldException, NoRecordFoundException {
         when(countryRepository.findByName(any())).thenReturn(Optional.empty());
-        countryService.deleteCountry(Country.builder().name("Brasil").build());
+        countryService.deleteCountry("Brasil");
     }
 
 }

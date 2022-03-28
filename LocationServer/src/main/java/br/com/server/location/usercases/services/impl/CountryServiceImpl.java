@@ -33,11 +33,9 @@ public class CountryServiceImpl implements ICountryService {
     }
 
     @Override
-    public void deleteCountry(Country country) throws ValidationFieldException, NoRecordFoundException {
-        validateCountryName(country.getName());
-        countryRepository.delete(countryRepository.findByName(country.getName())
-                .orElseThrow(() -> new NoRecordFoundException(MSG_ERROR_NENHUM_REGISTRO_ENCONTRADO))
-        );
+    public void deleteCountry(String countryName) throws ValidationFieldException, NoRecordFoundException {
+        validateCountryName(countryName);
+        countryRepository.delete(CountryMapper.convertCountryToCountryEntity(searchByName(countryName)));
     }
 
     @Override
@@ -49,6 +47,12 @@ public class CountryServiceImpl implements ICountryService {
                         CountryMapper.convertCountryToCountryEntity(country)
                 )
         );
+    }
+
+    @Override
+    public Country searchByName(String countryName) throws NoRecordFoundException {
+        return CountryMapper.convertCountryEntityToCountry(countryRepository.findByName(countryName)
+                .orElseThrow(() -> new NoRecordFoundException(MSG_ERROR_NENHUM_REGISTRO_ENCONTRADO)));
     }
 
     protected void validateCountryName(String countryName) throws ValidationFieldException {

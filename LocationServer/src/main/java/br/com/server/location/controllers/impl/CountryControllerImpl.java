@@ -50,7 +50,7 @@ public class CountryControllerImpl implements ICountryController {
     @DeleteMapping("/delete")
     @Override
     public void deleteCountry(@RequestBody CountryDTO dto) throws NoRecordFoundException, ValidationFieldException {
-        countryService.deleteCountry(CountryMapper.convertCountryDtoToCountry(dto));
+        countryService.deleteCountry(dto.getName());
     }
 
 }
